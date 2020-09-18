@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:qb_flutter/landingpage.dart';
+import 'package:qb_flutter/login_form.dart';
 
 class LoginReg extends StatelessWidget {
   @override
@@ -10,22 +11,29 @@ class LoginReg extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Spacer(),
             LandingPage(),
             SizedBox(
               height: 50,
             ),
-            Container(
-                decoration: BoxDecoration(
-                    color: Color(0xFF18D191),
-                    borderRadius: BorderRadius.circular(10.0)),
-                width: double.maxFinite,
-                margin: EdgeInsets.all(20.0),
-                padding: EdgeInsets.all(20.0),
-                child: Center(
-                    child: Text(
-                  "Sign in with Email",
-                  style: TextStyle(color: Colors.white),
-                ))),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => LoginForm()));
+              },
+              child: Container(
+                  decoration: BoxDecoration(
+                      color: Color(0xFF18D191),
+                      borderRadius: BorderRadius.circular(10.0)),
+                  width: double.maxFinite,
+                  margin: EdgeInsets.all(20.0),
+                  padding: EdgeInsets.all(20.0),
+                  child: Center(
+                      child: Text(
+                    "Sign in with Email",
+                    style: TextStyle(color: Colors.white),
+                  ))),
+            ),
             Row(
               children: [
                 Expanded(
@@ -75,7 +83,15 @@ class LoginReg extends StatelessWidget {
                       )),
                 )
               ],
-            )
+            ),
+            Spacer(),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                "Don't have an account? Sign in",
+                style: TextStyle(color: Colors.black),
+              ),
+            ),
           ],
         ),
       ),

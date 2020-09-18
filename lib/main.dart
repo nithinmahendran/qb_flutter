@@ -3,7 +3,7 @@ import 'package:qb_flutter/landingpage.dart';
 import 'package:qb_flutter/login_reg.dart';
 
 void main() {
-  runApp(MaterialApp(home: LoginReg()));
+  runApp(MaterialApp(debugShowCheckedModeBanner: false, home: LoginReg()));
 }
 
 class MyHome extends StatefulWidget {
