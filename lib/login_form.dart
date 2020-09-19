@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:qb_flutter/home.dart';
 import 'package:qb_flutter/landingpage.dart';
 
 class LoginForm extends StatelessWidget {
@@ -42,24 +43,33 @@ class LoginForm extends StatelessWidget {
                     Row(
                       children: [
                         Expanded(
-                          child: Container(
-                              margin: EdgeInsets.only(left: 5, right: 30),
-                              decoration: BoxDecoration(
-                                  color: Color(0XFF18D191),
-                                  borderRadius: BorderRadius.circular(10.0)),
-                              padding: EdgeInsets.all(15.0),
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  SizedBox(
-                                    width: 10.0,
-                                  ),
-                                  Text(
-                                    "Sign In",
-                                    style: TextStyle(color: Colors.white),
-                                  )
-                                ],
-                              )),
+                          child: GestureDetector(
+                            onTap: () {
+                              Navigator.pushAndRemoveUntil(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => HomePage()),
+                                  (route) => false);
+                            },
+                            child: Container(
+                                margin: EdgeInsets.only(left: 5, right: 30),
+                                decoration: BoxDecoration(
+                                    color: Color(0XFF18D191),
+                                    borderRadius: BorderRadius.circular(10.0)),
+                                padding: EdgeInsets.all(15.0),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    SizedBox(
+                                      width: 10.0,
+                                    ),
+                                    Text(
+                                      "Sign In",
+                                      style: TextStyle(color: Colors.white),
+                                    )
+                                  ],
+                                )),
+                          ),
                         ),
                         Expanded(
                           child: Container(
