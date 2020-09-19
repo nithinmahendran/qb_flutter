@@ -11,18 +11,85 @@ class LoginForm extends StatelessWidget {
         elevation: 0,
         backgroundColor: Colors.transparent,
       ),
-      body: Container(
-        width: double.maxFinite,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            LandingPage(),
-            Form(
-              child: Column(
-                children: [TextField()],
-              ),
-            )
-          ],
+      body: Padding(
+        padding: const EdgeInsets.all(10.0),
+        child: Container(
+          width: double.maxFinite,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              LandingPage(),
+              Form(
+                child: Column(
+                  children: [
+                    TextFormField(
+                        keyboardType: TextInputType.emailAddress,
+                        enableSuggestions: true,
+                        decoration: InputDecoration(
+                            labelText: "Email Address",
+                            focusColor: Color(0XFF18D191))),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    TextFormField(
+                      obscureText: true,
+                      decoration: InputDecoration(
+                        labelText: "Password",
+                        focusColor: Color(0XFF18D191),
+                      ),
+                    ),
+                    SizedBox(height: 20),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: Container(
+                              margin: EdgeInsets.only(left: 5, right: 30),
+                              decoration: BoxDecoration(
+                                  color: Color(0XFF18D191),
+                                  borderRadius: BorderRadius.circular(10.0)),
+                              padding: EdgeInsets.all(15.0),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  SizedBox(
+                                    width: 10.0,
+                                  ),
+                                  Text(
+                                    "Sign In",
+                                    style: TextStyle(color: Colors.white),
+                                  )
+                                ],
+                              )),
+                        ),
+                        Expanded(
+                          child: Container(
+                              margin: EdgeInsets.only(left: 10, right: 20),
+                              decoration: BoxDecoration(
+                                  color: Colors.transparent,
+                                  borderRadius: BorderRadius.circular(10.0)),
+                              padding: EdgeInsets.all(15.0),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  SizedBox(
+                                    width: 10.0,
+                                  ),
+                                  Text(
+                                    "Forgot password?",
+                                    style: TextStyle(
+                                      color: Colors.black,
+                                    ),
+                                  )
+                                ],
+                              )),
+                        )
+                      ],
+                    ),
+                  ],
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );
